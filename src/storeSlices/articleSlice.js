@@ -16,7 +16,7 @@ const initialState = {
     healthArticles : [],
     sportsArticles : [],
     entertainmentArticles : [],
-    categoryArticlseRejected : {},
+    categoryArticlesRejected : {},
 
     // getEverything() states
     everyPointLoading : true,
@@ -28,7 +28,7 @@ const initialState = {
 
 // get all the article from top-headlines endpoint in langugage=en
 
-export const getAllArticles = createAsyncThunk('getAllArticles', async (lang = 'en', page=0) => {
+export const getAllArticles = createAsyncThunk('getAllArticles', async ({lang='en', page=1}) => {
     const {data} = await axios.get(`${conf.newsBaseUrl}/${conf.newsEndpoint.topHeadlines}?language=${lang}&page=${page}&apiKey=${conf.newsApiKey}`)
     return data;
 })
@@ -36,13 +36,13 @@ export const getAllArticles = createAsyncThunk('getAllArticles', async (lang = '
 
 // get the articles on the basis of whatever category is clicked
 
-export const getCategoryArticles = createAsyncThunk('getCategoryArticles', async (category = 'science', country = null, lang='en', query=null) => {
+export const getCategoryArticles = createAsyncThunk('getCategoryArticles', async ({category = 'science', country = "", lang='en', query=""}) => {
     const {data} = await axios.get(`${conf.newsBaseUrl}/${conf.newsEndpoint.topHeadlines}?q=${query}&category=${category}&country=${country}&language=${lang}&apiKey=${conf.newsApiKey}`)
     return {data  : data , category : category};
 })
 
-export const getEveryArticle = createAsyncThunk('getEveryArticle', async (query, lang='en') => {
-    const {data} = axios.get(`${conf.newsBaseUrl}/${conf.newsEndpoint.everything}/?q=${query}&language=${lang}&apiKey=${conf.newsApiKey}`)
+export const getEveryArticle = createAsyncThunk('getEveryArticle', async ({query, lang='en'}) => {
+    const {data} = await axios.get(`${conf.newsBaseUrl}/${conf.newsEndpoint.everything}/?q=${query}&language=${lang}&apiKey=${conf.newsApiKey}`)
     return data;
 })
 
@@ -102,7 +102,7 @@ const articleSlice = createSlice({
             state.healthArticles = []
             state.sportsArticles = []
             state.entertainmentArticles = []
-            state.categoryArticlseRejected = action.payload
+            state.categoryArticlesRejected = action.payload
             state.categoryLoading = false;
         })
 
@@ -111,6 +111,7 @@ const articleSlice = createSlice({
             state.everyPointLoading = true;
         })
         builder.addCase(getEveryArticle.fulfilled, (state, action) => {
+            console.log(action.payload);
             state.everyArticles = action.payload
             state.everyPointLoading = false;
         })
