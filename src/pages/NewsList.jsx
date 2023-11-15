@@ -21,6 +21,10 @@ const NewsList = () => {
     }
   }, [category, dispatch]);
 
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[category])
+
   let allData;
   if (category === "all-news") {
     allData = useSelector((state) => state.article.everyArticles);

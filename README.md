@@ -57,7 +57,7 @@ Follow these steps to set up and run the project locally:
    npm install
    ```
 
-4. Create a `.env` file in the root directory and add your API key:
+4. Rename the `.env.example` to `.env` file in the root directory and add your API key:
 
    ```env
    VITE_NEWS_API = YOUR_API_KEY_FROM_NewsAPI
