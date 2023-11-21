@@ -5,7 +5,7 @@ import {
   getCategoryArticles,
   getEveryArticle,
 } from "../storeSlices/articleSlice";
-import { NewsCard, SkeletonCard } from "../components";
+import { NewsCard, ScrollToTopButton, SkeletonCard } from "../components";
 import Search from "../components/Search";
 
 const NewsList = () => {
@@ -27,9 +27,7 @@ const NewsList = () => {
         ? dispatch(
             getCategoryArticles({ category: category, query: searchQuery })
           )
-        : dispatch(
-            getCategoryArticles({ category: category, query: "" })
-          );
+        : dispatch(getCategoryArticles({ category: category, query: "" }));
     }
   }, [category, dispatch, searchQuery]);
 
@@ -78,7 +76,7 @@ const NewsList = () => {
 
   console.log(articles);
 
-  const handleSearch = ( query) => {
+  const handleSearch = (query) => {
     console.log(query);
     setSearchQuery(query);
   };
@@ -88,20 +86,25 @@ const NewsList = () => {
       Loading....
     </h1>
   ) : articles && articles.length > 0 ? (
-    <div className='text-white flex flex-col gap-5 py-10'>
-      <div className='flex items-center w-[80vw] mx-auto justify-between'>
-        <h1 className='text-4xl font-bold text-yellow-400 tracking-wider'>
-          {category}
-        </h1>
-        <Search handleSearch={handleSearch} />
+    <>
+      <div className='text-white flex flex-col gap-5 py-10'>
+        <div className='flex items-center w-[80vw] mx-auto justify-between'>
+          <h1 className='text-4xl font-bold text-yellow-400 tracking-wider'>
+            {category}
+          </h1>
+          <Search handleSearch={handleSearch} />
+        </div>
+        <ul className='flex flex-col gap-10 w-[80vw] mx-auto'>
+          {articles &&
+            articles?.map((article) => (
+              <NewsCard key={article?.title} item={article} />
+            ))}
+        </ul>
       </div>
-      <ul className='flex flex-col gap-10 w-[80vw] mx-auto'>
-        {articles &&
-          articles?.map((article) => (
-            <NewsCard key={article?.title} item={article} />
-          ))}
-      </ul>
-    </div>
+      <div className='z-10 sticky w-[80vw] flex bottom-8 mx-auto justify-end'>
+        <ScrollToTopButton />
+      </div>
+    </>
   ) : (
     <div className='flex flex-col gap-5 py-10'>
       <h1 className='mx-auto text-4xl tracking-widest text-yellow-400 font-bold animate-pulse'>

@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllArticles } from '../storeSlices/articleSlice';
-import { HomeCarousel, InfiniteScrollComponent } from '../components';
+import { HomeCarousel, InfiniteScrollComponent, ScrollToTopButton } from '../components';
 
 const Home = () => {
 
@@ -40,6 +40,9 @@ const Home = () => {
         <div className='w-[80vw] mx-auto'>
           <InfiniteScrollComponent/>
         </div>
+        <div className='z-10 sticky w-[80vw] flex bottom-8 mx-auto justify-end'>
+        <ScrollToTopButton />
+      </div>
       </section>
     </>
   )

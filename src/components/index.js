@@ -5,5 +5,6 @@ import CarouselComponent from "./CarouselComponent";
 import InfiniteScrollComponent from "./InfiniteScrollNews";
 import NewsCard from "./NewsCard";
 import SkeletonCard from "./SkeletonCard";
+import ScrollToTopButton from "./ScrollToTopButton";
 
-export {Header, Footer, HomeCarousel, CarouselComponent, SkeletonCard, InfiniteScrollComponent, NewsCard}
+export {Header, Footer, ScrollToTopButton, HomeCarousel, CarouselComponent, SkeletonCard, InfiniteScrollComponent, NewsCard}
