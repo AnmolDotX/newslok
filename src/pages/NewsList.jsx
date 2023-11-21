@@ -21,13 +21,21 @@ const NewsList = () => {
       searchQuery.length > 0
         ? dispatch(getEveryArticle({ query: searchQuery, lang: "en" }))
         : dispatch(getEveryArticle({ query: "latest", lang: "en" }));
+      setSearchQuery("");
     } else {
-      dispatch(getCategoryArticles({ category: category, query: searchQuery }));
+      searchQuery.length > 0
+        ? dispatch(
+            getCategoryArticles({ category: category, query: searchQuery })
+          )
+        : dispatch(
+            getCategoryArticles({ category: category, query: "" })
+          );
     }
   }, [category, dispatch, searchQuery]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    setSearchQuery("");
   }, [category]);
 
   let allData;
@@ -70,8 +78,7 @@ const NewsList = () => {
 
   console.log(articles);
 
-  const handleSearch = (e, query) => {
-    e.preventDefault();
+  const handleSearch = ( query) => {
     console.log(query);
     setSearchQuery(query);
   };
