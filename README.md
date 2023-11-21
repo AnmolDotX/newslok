@@ -16,12 +16,12 @@ Welcome to the News App project! This project is an ongoing effort to create a n
 
 - [x] Implementation of a carousel to showcase featured news articles.
 - [x] Dynamic display of the news articles in the carousel.
-- [ ] Customizable carousel settings for user preferences.
+- [x] Carousel settings for user preferences.
 
 ### 3. User Interaction
 
 - [ ] Bookmarking and saving articles for future reference.
-- [ ] User-friendly interface for a seamless news reading experience.
+- [x] User-friendly interface for a seamless news reading experience.
 
 ### 4. Search Functionality
 

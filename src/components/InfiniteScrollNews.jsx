@@ -15,13 +15,11 @@ const InfiniteScrollComponent = () => {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
-
       try {
         await dispatch(getAllArticles({ lang: "en", page: page }));
       } catch (error) {
         console.error("Error fetching data:", error);
       }
-
       setLoading(false);
     };
 
@@ -56,9 +54,9 @@ const InfiniteScrollComponent = () => {
   return (
     <div>
       <ul className="flex flex-col gap-8">
-        {items.map((item, index) => {
+        {items.map((item) => {
           if (item?.title !== "[Removed]") {
-            return <NewsCard item={item} index={index} />;
+            return <NewsCard key={item?.title} item={item} />;
           }
         })}
       </ul>

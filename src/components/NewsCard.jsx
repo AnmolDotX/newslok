@@ -14,7 +14,7 @@ const NewsCard = ({
         <img src={item?.urlToImage} alt={`Image here`} className='object-cover object-center rounded-md backdrop-filter backdrop-blur-md opacity-50 hover:backdrop-filter-none hover:opacity-100 transition-all cursor-pointer' />
       </Link>
       <div id='news-data-container' className='flex flex-col gap-3 items-start  text-left w-full md:h-full -mr-3 overflow-auto'>
-        <h2 className='text-xs lg:text-lg font-bold text-sky-600 hover:text-sky-700 transition-all duration-200'><Link to={item?.url}>{item?.title}</Link></h2>
+        <h2 className='text-xs lg:text-lg font-bold text-sky-600 hover:text-sky-700 transition-all duration-200'><Link to={item?.url} target='_blank'>{item?.title}</Link></h2>
         <h4 className='text-xs font-thin lg:text-sm lg:font-normal text-white/75'>{item?.description?.slice(0,100)}...</h4>
         <p className='hidden lg:block text-xs font-thin text-slate-400 tracking-wide'>{item?.content}</p>
       </div>

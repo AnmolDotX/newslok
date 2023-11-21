@@ -37,11 +37,13 @@ export const getAllArticles = createAsyncThunk('getAllArticles', async ({lang='e
 // get the articles on the basis of whatever category is clicked
 
 export const getCategoryArticles = createAsyncThunk('getCategoryArticles', async ({category = 'science', country = "", lang='en', query=""}) => {
+    console.log(query);
     const {data} = await axios.get(`${conf.newsBaseUrl}/${conf.newsEndpoint.topHeadlines}?q=${query}&category=${category}&country=${country}&language=${lang}&apiKey=${conf.newsApiKey}`)
     return {data  : data , category : category};
 })
 
-export const getEveryArticle = createAsyncThunk('getEveryArticle', async ({query, lang='en'}) => {
+export const getEveryArticle = createAsyncThunk('getEveryArticle', async ({query="latest", lang='en'}) => {
+    console.log(query);
     const {data} = await axios.get(`${conf.newsBaseUrl}/${conf.newsEndpoint.everything}/?q=${query}&language=${lang}&apiKey=${conf.newsApiKey}`)
     return data;
 })

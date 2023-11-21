@@ -6,24 +6,29 @@ import {
   getEveryArticle,
 } from "../storeSlices/articleSlice";
 import { NewsCard, SkeletonCard } from "../components";
+import Search from "../components/Search";
 
 const NewsList = () => {
   const { category } = useParams();
   const dispatch = useDispatch();
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     if (category === "all-news") {
-      dispatch(getEveryArticle({ query: "latest", lang: "en" }));
+      console.log(searchQuery);
+      searchQuery.length > 0
+        ? dispatch(getEveryArticle({ query: searchQuery, lang: "en" }))
+        : dispatch(getEveryArticle({ query: "latest", lang: "en" }));
     } else {
-      dispatch(getCategoryArticles({ category: category }));
+      dispatch(getCategoryArticles({ category: category, query: searchQuery }));
     }
-  }, [category, dispatch]);
+  }, [category, dispatch, searchQuery]);
 
-  useEffect(()=>{
-    window.scrollTo(0,0)
-  },[category])
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [category]);
 
   let allData;
   if (category === "all-news") {
@@ -65,15 +70,29 @@ const NewsList = () => {
 
   console.log(articles);
 
+  const handleSearch = (e, query) => {
+    e.preventDefault();
+    console.log(query);
+    setSearchQuery(query);
+  };
+
   return isLoading ? (
-    <h1 className='text-5xl font-bold text-white'>Loading....</h1>
+    <h1 className='text-2xl font-bold text-white text-center tracking-widest'>
+      Loading....
+    </h1>
   ) : articles && articles.length > 0 ? (
     <div className='text-white flex flex-col gap-5 py-10'>
-      <h1 className='text-4xl font-bold text-yellow-400 tracking-wider mx-auto'>
-        {category}
-      </h1>
+      <div className='flex items-center w-[80vw] mx-auto justify-between'>
+        <h1 className='text-4xl font-bold text-yellow-400 tracking-wider'>
+          {category}
+        </h1>
+        <Search handleSearch={handleSearch} />
+      </div>
       <ul className='flex flex-col gap-10 w-[80vw] mx-auto'>
-        {articles && articles?.map((article) => <NewsCard item={article} />)}
+        {articles &&
+          articles?.map((article) => (
+            <NewsCard key={article?.title} item={article} />
+          ))}
       </ul>
     </div>
   ) : (
