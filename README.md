@@ -77,5 +77,3 @@ Follow these steps to set up and run the project locally:
 ## Contributing
 
 Contributions are welcome! If you have any ideas, feature requests, or bug reports, please open an issue or submit a pull request.
-
-```

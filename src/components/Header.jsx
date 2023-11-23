@@ -1,4 +1,6 @@
 import React from "react";
+import { FaBookBookmark } from "react-icons/fa6";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
@@ -33,6 +35,8 @@ const Header = () => {
     },
   ];
 
+  const bookmarks = useSelector((state) => state.bookmarks)
+
   return (
     <header className='text-white z-10 sticky top-0 flex items-center w-full gap-10 justify-between py-3 md:py-5 bg-slate-950/75 drop-shadow-2xl shadow-black shadow-2xl px-8 md:px-20 backdrop-filter backdrop-blur-2xl'>
       <NavLink
@@ -45,6 +49,7 @@ const Header = () => {
       >
         News Lok
       </NavLink>
+        <div className="flex items-center gap-5">
         <nav className='flex items-center gap-10 text-xs font-light tracking-wide custom-scrollbar overflow-auto'>
           {allCategories?.map((elm) => (
             <NavLink
@@ -60,6 +65,12 @@ const Header = () => {
             </NavLink>
           ))}
         </nav>
+        <div className={bookmarks?.length > 0 ? "block" : "hidden"}>
+            {
+              bookmarks?.length > 0 ? <NavLink to="/news-list/bookmarks" className="text-white"><FaBookBookmark className="text-yellow-400" /></NavLink> : null
+            }
+        </div>
+        </div>
     </header>
   );
 };
