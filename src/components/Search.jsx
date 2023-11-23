@@ -10,7 +10,7 @@ const Search = ({ handleSearch}) => {
     }
 
   return (
-    <form className="shadow-slate-700 shadow-lg border-yellow-500 border rounded" onSubmit={(e) => searchFun(e,query)}>
+    <form className="shadow-slate-500 shadow-lg border-yellow-500 border rounded" onSubmit={(e) => searchFun(e,query)}>
       <input
         className=' py-[6px] px-3 rounded-l text-white bg-slate-950  focus:border-none outline-none'
         type='text'

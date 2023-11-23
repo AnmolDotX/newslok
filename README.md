@@ -10,7 +10,7 @@ Welcome to the News App project! This project is an ongoing effort to create a n
 
 - [x] Integration with a news API to fetch the latest news articles.
 - [x] Support for different news categories (e.g., technology, sports, politics).
-- [ ] Infinite scroll for continuous news loading.
+- [x] Infinite scroll for continuous news loading.
 
 ### 2. Carousel Display
 
@@ -25,8 +25,8 @@ Welcome to the News App project! This project is an ongoing effort to create a n
 
 ### 4. Search Functionality
 
-- [ ] Integration of a search bar for users to find specific news articles.
-- [ ] Advanced search options, such as filtering by date or category.
+- [x] Integration of a search bar for users to find specific news articles.
+- [ ] Advanced search options, such as filtering by language & country.
 
 ## Getting Started
 
@@ -64,7 +64,7 @@ Follow these steps to set up and run the project locally:
    VITE_NEWS_BASE_URL = "https://newsapi.org/v2"
    ```
 
-   Replace `your-api-key` with your actual API key.
+   Replace `YOUR_API_KEY_FROM_NewsAPI` with your actual API key.
 
 5. Start the development server:
 

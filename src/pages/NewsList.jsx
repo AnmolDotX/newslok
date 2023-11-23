@@ -27,7 +27,7 @@ const NewsList = () => {
         ? dispatch(
             getCategoryArticles({ category: category, query: searchQuery })
           )
-        : dispatch(getCategoryArticles({ category: category, query: "" }));
+        : dispatch(getCategoryArticles({ category: category }));
     }
   }, [category, dispatch, searchQuery]);
 
@@ -90,7 +90,7 @@ const NewsList = () => {
       <div className='text-white flex flex-col gap-5 py-10'>
         <div className='flex items-center w-[80vw] mx-auto justify-between'>
           <h1 className='text-4xl font-bold text-yellow-400 tracking-wider'>
-            {category}
+            {category.toUpperCase()}
           </h1>
           <Search handleSearch={handleSearch} />
         </div>
