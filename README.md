@@ -20,7 +20,7 @@ Welcome to the News App project! This project is an ongoing effort to create a n
 
 ### 3. User Interaction
 
-- [ ] Bookmarking and saving articles for future reference.
+- [x] Bookmarking and saving articles for future reference.
 - [x] User-friendly interface for a seamless news reading experience.
 
 ### 4. Search Functionality
