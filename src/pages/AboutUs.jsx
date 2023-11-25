@@ -8,7 +8,9 @@ const AboutUs = () => {
     window.scrollTo(0,0)
   },[])
 
+
   return (
+
     <section className='min-h-screen'>
       <div className="bg-gray-100/20 dark:bg-black/30 backdrop-filter backdrop-blur-lg bg-opacity-80 p-8 rounded-md shadow-lg max-w-[80vw] mx-auto mt-10">
       <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">About Us</h2>

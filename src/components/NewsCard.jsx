@@ -29,7 +29,7 @@ const NewsCard = ({
 
   
   return (
-    <div key={item?.content} className='flex flex-col md:flex-row  items-center gap-5 bg-slate-900/20 py-4 px-3 backdrop-filter backdrop-blur h-72 md:h-40 lg:h-64 rounded-lg justify-between'>
+    <div key={item?.content} className='flex flex-col md:flex-row  items-center gap-5 bg-slate-950/80 py-4 px-3 backdrop-filter backdrop-blur h-72 md:h-40 lg:h-64 rounded-lg justify-between'>
       <Link to={item?.url} target='_blank' id="image-container" className='w-full md:w-40 lg:w-60 h-1/4 md:h-full flex flex-shrink-0'>
         <img src={item?.urlToImage} alt={`Image here`} className='object-cover object-center rounded-md backdrop-filter backdrop-blur-md opacity-50 hover:backdrop-filter-none hover:opacity-100 transition-all cursor-pointer' title='Article Cover Image' />
       </Link>

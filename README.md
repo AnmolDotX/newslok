@@ -2,31 +2,12 @@
 
 ## React based News app
 
-Welcome to the News App project! This project is an ongoing effort to create a news application with various features. Below you'll find information about the project, its features, and how to get started.
+Welcome to NewsLok, a modern responsive news application built with React. This feature-rich news app provides users with essential functionalities such as bookmarking, article reading, seamless user experience, and effective API management. Explore news effortlessly with a great user interface that enhances your overall news-reading experience.
 
-## Features (...In Progress...)
-
-### 1. Fetching News
-
-- [x] Integration with a news API to fetch the latest news articles.
-- [x] Support for different news categories (e.g., technology, sports, politics).
-- [x] Infinite scroll for continuous news loading.
-
-### 2. Carousel Display
-
-- [x] Implementation of a carousel to showcase featured news articles.
-- [x] Dynamic display of the news articles in the carousel.
-- [x] Carousel settings for user preferences.
-
-### 3. User Interaction
-
-- [x] Bookmarking and saving articles for future reference.
-- [x] User-friendly interface for a seamless news reading experience.
-
-### 4. Search Functionality
-
-- [x] Integration of a search bar for users to find specific news articles.
-- [ ] Advanced search options, such as filtering by language & country.
+## Demo Video
+<video height="450" autoplay muted loop>
+  <source src="./NewsLok.mp4" type="video/mp4">
+</video>
 
 ## Getting Started
 
@@ -73,6 +54,40 @@ Follow these steps to set up and run the project locally:
    ```
 
 6. Open your browser and visit [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Tech Stack
+- ReactJS
+- Redux-Toolkit
+- TailwindCSS
+- SwiperJS
+- Axios
+
+## Features
+
+### 1. Fetching News
+
+- Integration with a news API to fetch the latest news articles.
+- Support for different news categories (e.g., technology, sports, politics).
+- Infinite scroll for continuous news loading.
+
+### 2. Carousel Display
+
+- Implementation of a carousel to showcase featured news articles.
+- Dynamic display of the news articles in the carousel.
+- Carousel settings for user preferences.
+
+### 3. User Interaction
+
+- Bookmarking and saving articles for future reference.
+- User-friendly interface for a seamless news reading experience.
+
+### 4. Search Functionality
+
+- Integration of a search bar for users to find specific news articles.
+
+## Undeployement reason
+This project utilizes the NewsAPI.org free API for fetching news data. During development, CORS (Cross-Origin Resource Sharing) are enabled for localhost for free by NewsAPI.org, allowing seamless integration with the API. However, please note that for production deployment, It requires a paid subscription for CORS support. Consequently, the project has not been deployed to a production environment and a demo video has been attached at top in order to show the workings. Also feel free to set this project locally and test it on your own local machine.
+
 
 ## Contributing
 
