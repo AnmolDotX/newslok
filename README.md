@@ -6,7 +6,7 @@ Welcome to NewsLok, a modern responsive news application built with React. This 
 
 ## Demo Video
 <video height="450" autoplay muted loop>
-  <source src="./NewsLok.mp4" type="video/mp4">
+  <source src="./NewsLokDemo.mp4" type="video/mp4">
 </video>
 
 ## Getting Started
