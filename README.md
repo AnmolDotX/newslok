@@ -4,7 +4,7 @@
 
 Welcome to NewsLok, a modern responsive news application built with React. This feature-rich news app provides users with essential functionalities such as bookmarking, article reading, seamless user experience, and effective API management. Explore news effortlessly with a great user interface that enhances your overall news-reading experience.
 
-## Demo Video
+## [Demo Video Link](https://youtu.be/KVGg1OwGCPA)
 <video height="450" autoplay muted loop>
   <source src="./NewsLokDemo.mp4" type="video/mp4">
 </video>
