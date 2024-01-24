@@ -17,7 +17,7 @@ const NewsList = () => {
 
   useEffect(() => {
     if (category === "all-news") {
-      console.log(searchQuery);
+      // console.log(searchQuery);
       searchQuery.length > 0
         ? dispatch(getEveryArticle({ query: searchQuery, lang: "en" }))
         : dispatch(getEveryArticle({ query: "latest", lang: "en" }));
@@ -74,7 +74,7 @@ const NewsList = () => {
     }
   }, [categoryData, allData]);
 
-  console.log(articles);
+  // console.log(articles);
 
   const handleSearch = (query) => {
     console.log(query);

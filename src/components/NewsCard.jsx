@@ -13,7 +13,7 @@ const NewsCard = ({
 
   const dispatch = useDispatch();
   const bookmarks = useSelector((state) => state.bookmarks)
-  console.log(bookmarks);
+  // console.log(bookmarks);
 
   const handleBookmark = () => {
     if(isBookmarked(item.url)) {

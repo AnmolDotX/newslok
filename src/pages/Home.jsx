@@ -22,7 +22,7 @@ const Home = () => {
   const {articles, totalResults} = useSelector((state) => state.article.allArticles);
 
 
-  console.log(allArticles);
+  // console.log(allArticles);
 
   // let's set it to a state to use it on this page
 

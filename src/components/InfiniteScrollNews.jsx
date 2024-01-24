@@ -49,7 +49,7 @@ const InfiniteScrollComponent = () => {
     }
   }, [articles]);
 
-  console.log(items);
+  // console.log(items);
 
   return (
     <div>
